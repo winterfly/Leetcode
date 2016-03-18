@@ -11,7 +11,7 @@ public:
             }
             if (count<=mid) {
                 left=mid+1;
-            } else if (count>mid) {
+            } else {
                 right=mid;
             }
         }
