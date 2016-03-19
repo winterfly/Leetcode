@@ -8,7 +8,7 @@
  */
 public class Solution {
     public ListNode insertionSortList(ListNode head) {
-        ListNode dummy=new ListNode(0);
+        ListNode dummy=new ListNode(0);//same as cpp
         while (head!=null) {
             ListNode node=dummy;
             while (node.next!=null&&node.next.val<head.val) node=node.next;
