@@ -4,8 +4,8 @@ public class Solution {
         if (nr==0) return 0;
         int nc=image[0].length;
         if (nc==0) return 0;
-        int left=search(image,0,x,0,nc-1,true,true);
-        int right=search(image,x+1,nr,0,nc-1,true,false);
+        int left=search(image,0,x,0,nc,true,true);
+        int right=search(image,x+1,nr,0,nc,true,false);
         int top=search(image,0,y,left,right,false,true);
         int bottom=search(image,y+1,nc,left,right,false,false);
         return (right-left)*(bottom-top);
@@ -16,7 +16,7 @@ public class Solution {
             int mid=low+(high-low)/2;
             boolean containBlack=false;
             for (int i=min;i<max;i++) {
-                if ((horizontal?image[i][mid]:image[mid][i])=='1') {
+                if ((horizontal?image[mid][i]:image[i][mid])=='1') {
                     containBlack=true;
                     break;
                 }
