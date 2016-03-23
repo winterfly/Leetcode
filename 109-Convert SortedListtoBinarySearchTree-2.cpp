@@ -23,9 +23,8 @@ public:
         TreeNode* left=toBST(head,start,mid-1);
         TreeNode* treeHead=new TreeNode(head->val);
         head=head->next;
-        TreeNode* right=toBST(head,mid+1,end);
         treeHead->left=left;
-        treeHead->right=right;
+        treeHead->right=toBST(head,mid+1,end);
         return treeHead;
     }
     TreeNode* sortedListToBST(ListNode* head) {
