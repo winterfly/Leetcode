@@ -15,27 +15,27 @@ public class Solution {
         
         HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
         
-        RandomListNode current = head;
-        while (current != null) {
-            RandomListNode node = new RandomListNode(current.label);
-            map.put(current, node);
+        RandomListNode old = head;
+        while (old != null) {
+            RandomListNode node = new RandomListNode(old.label);
+            map.put(old, node);
             dummy.next = node;
             dummy = dummy.next;
-            current = current.next;
+            old = old.next;
         }
         
         dummy = dummy0;
-        current = head;
+        old = head;
         RandomListNode temp;
         while (dummy.next != null) {
             dummy = dummy.next;
-            temp = current.random;
+            temp = old.random;
             if (temp == null) {
                 dummy.random = null;
             } else {
                 dummy.random = map.get(temp);
             }            
-            current = current.next;
+            old = old.next;
         }
         
         return dummy0.next;
